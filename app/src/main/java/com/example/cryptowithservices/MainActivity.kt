@@ -1,12 +1,12 @@
 package com.example.cryptowithservices
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import com.example.cryptowithservices.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
             startService(MyService.newServiceIntent(this, 50))
         }
         binding.foregroundService.setOnClickListener {
-            showNotification()
+            ContextCompat.startForegroundService(
+                this,
+                MyForegroundService.newServiceIntent(this)
+            )
         }
     }
 
