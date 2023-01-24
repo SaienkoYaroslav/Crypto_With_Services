@@ -7,7 +7,7 @@ import android.os.IBinder
 import android.util.Log
 import kotlinx.coroutines.*
 
-class MyService: Service() {
+class MyService : Service() {
 
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
@@ -48,7 +48,7 @@ class MyService: Service() {
 
         private const val EXTRA_START = "start"
 
-        fun newServiceIntent(context: Context, start: Int) : Intent {
+        fun newServiceIntent(context: Context, start: Int): Intent {
             return Intent(context, MyService::class.java).apply {
                 putExtra(EXTRA_START, start)
             }
