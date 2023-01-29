@@ -37,7 +37,7 @@ class MyIntentService : IntentService(NAME) {
     }
 
     private fun log(str: String) {
-        Log.d("SERVICE_TAG", "MyForegroundService: $str")
+        Log.d("SERVICE_TAG", "MyIntentService: $str")
     }
 
     private fun createNotificationChannel() {
